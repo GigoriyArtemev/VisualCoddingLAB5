@@ -2,40 +2,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="200"
-		Width="450" Height="600"
-        x:Class="VisualCoddingLAB5.Views.SetRegex"
-        Title="SetRegex">
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="150"
+		Width="450" Height="150"
+        x:Class="VisualCoddingLAB5.Views.RegexWindow"
+        Title="RegexWindow">
+
 	<Grid ShowGridLines="True">
 
 		<Grid.RowDefinitions>
-			<RowDefinition Height="100"></RowDefinition>
+			<RowDefinition Height="70"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
 			<RowDefinition Height="*"></RowDefinition>
 		</Grid.RowDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="50"></RowDefinition>
 
-		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-		
 			<ColumnDefinition Width="*"></ColumnDefinition>
 		</Grid.ColumnDefinitions>
 
-		<TextBlock Text="{Binding Path}" Grid.Row="0" Grid.Column="0">
+		<TextBox Name="textRegVr" Text="{Binding Path}" Grid.Row="0" Grid.Column="0">
+		</TextBox>
 
 
-		</TextBlock>
-		<TextBlock  Grid.Row="0" Grid.Column="1">
-
-		</TextBlock>
-
-		<Button Grid.Row="1" Grid.Column="1"
+		<Button Grid.Row="1" Grid.Column="0"
 		Name="OkeyNow"  Content="OK"
 		HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"
 		VerticalContentAlignment="Center" VerticalAlignment="Stretch">
 
 		</Button>
-		<Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+		<Button Grid.Row="2" Grid.Column="0"
 			Name="CancelNow" HorizontalContentAlignment="Center"  Content="Cancel"
 		HorizontalAlignment="Stretch" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
 		</Button>

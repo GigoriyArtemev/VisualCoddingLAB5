@@ -1,33 +1,40 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using ReactiveUI;
+using System;
+
 
 namespace VisualCoddingLAB5.Views
 {
-    public partial class SetRegex : Window
+    public partial class RegexWindow : Window
     {
-        public SetRegex()
+        public delegate void OkHandler(string message);
+        public event OkHandler? OkNotify;
+        public RegexWindow()
         {
             InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
 #endif
             this.FindControl<Button>("OkeyNow").Click += async delegate
-              {
-                  Close("ok cliked");
-  
-              };
+            {
+                OkNotify(this.Find<TextBox>("textRegVr").Text);
+                Close();
+
+            };
             this.FindControl<Button>("CancelNow").Click += async delegate
             {
                 Close();
 
 
-              };
+            };
         }
 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
         }
+
     }
 }
