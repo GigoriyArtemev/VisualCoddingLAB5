@@ -14,13 +14,17 @@ namespace Regex1.Models
         public static string? FindRegexInText(string text, string pattern)
         {
             string result = "";
-            Regex r = new Regex(pattern);
-            MatchCollection m = r.Matches(text);
-            foreach (Match x in m)
+            if (pattern == null) { return null; }
+            else
             {
-                result += (x.Value + "\n");
+                Regex r = new Regex(pattern);
+                MatchCollection m = r.Matches(text);
+                foreach (Match x in m)
+                {
+                    result += (x.Value + "\n");
+                }
+                return result;
             }
-            return result;
         }
     }
 }
